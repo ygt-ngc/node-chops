@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node boot.js",
-    "test": "mocha spec/*.js"
+    "start": "node config/boot.js",
+    "test": "mocha spec/**/.js"
   },
   "author": "Nuno",
   "license": "ISC",
