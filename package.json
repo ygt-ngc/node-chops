@@ -2,13 +2,16 @@
   "name": "node-chops",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
+    "start": "node boot.js",
     "test": "mocha spec/*.js"
   },
   "author": "Nuno",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^5.8.24",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.20",
     "chai": "^3.2.0",
     "mocha": "^2.3.2",
     "sinon": "^1.16.1",
@@ -16,6 +19,8 @@
     "webpack-dev-server": "^1.10.1"
   },
   "dependencies": {
+    "babel": "^5.8.23",
+    "koa": "^1.0.0",
     "react": "^0.13.3"
   }
 }
