@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node config/boot.js",
+    "start-dev": "nodemon --harmony config/boot.js",
     "test": "mocha spec/**/.js"
   },
   "author": "Nuno",
@@ -21,6 +21,8 @@
   "dependencies": {
     "babel": "^5.8.23",
     "koa": "^1.0.0",
+    "koa-router": "^5.1.2",
+    "koa-static": "^1.4.9",
     "react": "^0.13.3"
   }
 }
