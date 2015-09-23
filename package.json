@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon --harmony config/boot.js",
     "webpack": "webpack --config config/webpack.config.js",
-    "wds": "webpack-dev-server --config config/webpack.config.js",
+    "wds": "webpack-dev-server --config config/webpack.config.js --content-base public/",
     "test": "mocha spec/**/.js"
   },
   "author": "Nuno",
