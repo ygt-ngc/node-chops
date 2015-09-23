@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start-dev": "nodemon --harmony config/boot.js",
+    "dev": "nodemon --harmony config/boot.js",
+    "webpack": "webpack --config config/webpack.config.js",
+    "wds": "webpack-dev-server --config config/webpack.config.js",
     "test": "mocha spec/**/.js"
   },
   "author": "Nuno",
