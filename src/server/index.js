@@ -7,7 +7,6 @@ var app = koa();
 
 var routes = router()
   .get("/", function*() { serve("public/index.html"); })
-  .get("/bundle.js", function*() { this.redirect("http://localhost:8080/bundle.js"); })
   .routes();
 
 var server =

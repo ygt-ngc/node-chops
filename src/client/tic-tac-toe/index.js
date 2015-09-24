@@ -1,4 +1,55 @@
 import React from "react";
+import classNames from "classnames";
+
+class Cell extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      markedByPlayer: null
+    };
+  }
+
+  _clickedCell() {
+    if (!this.state.markedByPlayer) {
+      this.setState({markedByPlayer: 1});
+    }
+  }
+
+  render() {
+    classes = classNames('cell',
+      {
+        'player-one': this.state.markedByPlayer == 1,
+        'player-two': this.state.markedByPlayer == 2
+      });
+
+    return (
+      <div className={classes}
+           id={"cell-" + this.row + "-" + this.col}
+           onClick={this._clickedCell()}>
+      </div>
+    );
+  }
+}
+
+class Row extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      owner: null
+    };
+  }
+
+  render() {
+    return (
+      <div className={"row row-" + this.props.row} id={"row-" + this.props.row}>
+        <Cell row={this.props.row} col="1" />
+        <Cell row={this.props.row} col="2" />
+        <Cell row={this.props.row} col="3" />
+      </div>
+    );
+  }
+}
 
 export default class TicTacToe extends React.Component {
   constructor() {
@@ -8,39 +59,9 @@ export default class TicTacToe extends React.Component {
 
   render() {
     return (<div id="tic-tac-toe">
-              <div className="row row-a" id="row-a">
-                <div className="cell" id="cell-a-1">
-                foo-a-1
-                </div>
-                <div className="cell" id="cell-a-2">
-                foo-a-2
-                </div>
-                <div className="cell" id="cell-a-3">
-                foo-a-3
-                </div>
-              </div>
-              <div className="row row-b" id="row-b">
-                <div className="cell" id="cell-b-1">
-                foo-b-1
-                </div>
-                <div className="cell" id="cell-b-2">
-                foo-b-2
-                </div>
-                <div className="cell" id="cell-b-3">
-                foo-b-3
-                </div>
-              </div>
-              <div className="row row-c" id="row-c">
-                <div className="cell" id="cell-c-1">
-                foo-c-1
-                </div>
-                <div className="cell" id="cell-c-2">
-                foo-c-2
-                </div>
-                <div className="cell" id="cell-c-3">
-                foo-c-3
-                </div>
-              </div>
+              <Row row="a" />
+              <Row row="b" />
+              <Row row="c" />
             </div>);
   }
 };
