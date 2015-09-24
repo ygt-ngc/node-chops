@@ -1,7 +1,10 @@
 var path = require("path");
 
 module.exports = {
-  entry: path.resolve(__dirname, "..", "src/client/index.js"),
+  entry: {
+    main: path.resolve(__dirname, "..", "src/client/index.js"),
+    "tic-tac-toe": path.resolve(__dirname, "..", "src/client/tic-tac-toe/index.js"),
+  },
 
   module: {
     loaders: [{ test: /\.jsx?$/, loader: "babel-loader" }],
@@ -9,6 +12,6 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, "..", "build"),
-    filename: "bundle.js",
+    filename: "[name].js",
   },
 }
